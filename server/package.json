@@ -1,0 +1,42 @@
+{
+  "name": "ionic-enfileiramento",
+  "version": "0.1.0",
+  "description": "API Server para cenfileiramento",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon server.js"
+  },
+  "author": "Up Solu�oes Web",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.4.0",
+    "bcrypt": "^0.8.3",
+    "body-parser": "^1.14.1",
+    "connect-redis": "^3.0.1",
+    "crypto": "0.0.3",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-load": "^1.1.15",
+    "express-session": "^1.13.0",
+    "jwt-simple": "^0.3.0",
+    "livereload-js": "^2.2.2",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.11",
+    "morgan": "^1.6.1",
+    "node-gcm": "^0.12.1",
+    "node-schedule": "^1.0.0",
+    "nodemailer": "^1.10.0",
+    "nodemailer-smtp-transport": "^1.0.4",
+    "password-generator": "^2.0.2",
+    "password-reset": "^0.1.4",
+    "path": "^0.12.7",
+    "redis": "^2.2.5",
+    "request": "^2.67.0",
+    "router": "^1.1.3",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.3.7",
+    "underscore": "^1.8.3",
+    "url": "^0.11.0"
+  }
+}

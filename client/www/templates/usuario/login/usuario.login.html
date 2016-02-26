@@ -1,0 +1,87 @@
+<!--<ion-modal-view cache-view="false" ng-controller="usuario.login as vm">
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="vm.closeLogin()">Fechar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="vm.login()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Usuário</span>
+          <input type="text" ng-model="vm.usuario.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Senha</span>
+          <input type="password" ng-model="vm.usuario.senha">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Entrar</button>
+        </label>
+      </div>
+    </form>
+    <label class="item">
+      <button class="button button-block button-positive" type="button" ng-click="vm.loginGoogle()">Entrar com Google</button>
+    </label>
+  </ion-content>
+</ion-modal-view>-->
+<ion-view title="Login" cache-view="false" ng-controller="usuario.login as vm">
+    <span ng-show="!vm.formLogin && !vm.formRegistro">
+        <ion-content scroll="false">
+          <ion-slide-box padding="true" class="">
+            <ion-slide>
+              <img src="img/SPLASH.jpg" class="home"
+                   style="width: 100%; height: 80%;margin:auto;display:block">
+            </ion-slide>
+            <ion-slide>
+              <img src="img/splash2.jpg" style="width: 100%; height: 80%;">
+            </ion-slide>
+          </ion-slide-box>
+        </ion-content>
+        <div class="home-spacer"></div>
+        <div class="home-button">
+          <button type="button" class="button button-small button-light button-icon  icon-left ion-log-in btn_default"
+                  ng-click="vm.formLogin = !vm.formLogin">Entrar
+          </button>
+
+          <span class="space-button"></span>
+
+          <button type="button" class="button button-small button-stable button-icon icon-left ion-android-checkmark-circle btn_default"
+                  ng-click="vm.formRegistro = !vm.formRegistro">
+            Cadastrar
+          </button>
+        </div>
+    </span>
+  <div ng-show="vm.formLogin" ng-include="'templates/usuario/login/_partials/_formLogin.html'"></div>
+  <div ng-show="vm.formRegistro" ng-include="'templates/usuario/login/_partials/_formCadastro.html'"></div>
+
+  <script id="formEsqueceuSenha.html" type="text/ng-template">
+    <ion-modal-view>
+      <ion-content>
+        <div class="header">
+          <a class="button ion-chevron-left btn_back" ng-click="vm.fecharModalEsqueceuSenha()"></a>
+          <h1>Esqueceu Senha?</h1>
+        </div>
+
+        <div class="form_padrao">
+
+          <span>Informe seu endereço de e-mail e você receberá uma nova senha.</span>
+
+          <hr class="space">
+
+          <form name="formEsqueceuSenha" ng-submit="vm.enviarSenha(vm.email)">
+            <div class="clear">
+              <input class="email" type="email" placeholder="Endereço de E-mail" ng-model="vm.email" />
+            </div>
+            <div class="clear">
+              <input ng-class="!!vm.email ? 'btn_padrao' : 'btn_padrao_disabled'" type="submit" value="Enviar"
+                     ng-disabled="!vm.email" />
+            </div>
+          </form>
+        </div>
+      </ion-content>
+    </ion-modal-view>
+  </script>
+
+</ion-view>

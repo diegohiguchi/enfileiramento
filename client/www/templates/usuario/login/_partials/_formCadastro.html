@@ -1,0 +1,113 @@
+<ion-content>
+  <div class="header">
+    <a class="button ion-chevron-left btn_back" ng-click="vm.formRegistro = !vm.formRegistro"></a>
+    <h1>Cadastre-se</h1>
+  </div>
+
+  <div class="form_padrao">
+    <div class="center header_camera" ng-show="vm.estabelecimento">
+      <a class="icon_cadastro" style="background-size: cover; background-image: url('{{vm.usuario.urlImagem}}');" ng-href="javascript:"
+         ng-click="vm.showPopup()">
+        <i ng-hide="vm.usuario.urlImagem != ''" class="fa fa-camera"></i>
+      </a>
+
+      <br>
+
+      <hr class="space">
+
+      <!--<img class="logo_header" src="img/icon_header.png" />-->
+    </div>
+
+    <form name="formRegistro" novalidate ng-submit="formRegistro.$valid && vm.registrar(vm.usuario)">
+      <div class="clear">
+        <select name="tipoUsuario" ng-model="vm.usuario.tipoUsuario" ng-change="vm.tipoUsuarioEscolhido(vm.usuario.tipoUsuario)" ng-options="tipoUsuario.nome for tipoUsuario in vm.tipoUsuario"
+                required>
+          <option value="">Tipo de usuário *</option>
+        </select>
+      </div>
+      <div class="clear">
+        <input type="text" maxlength="50" name="nome" placeholder="Nome *" ng-model="vm.usuario.nome" required/>
+      </div>
+
+      <div class="clear">
+        <input type="email" name="email" placeholder="E-mail *" ng-model="vm.usuario.email" required/>
+      </div>
+      <div class="clear">
+        <input type="password" name="senha" placeholder="Senha *" ng-model="vm.usuario.password" ng-model="vm.usuario.password" minlength="3"
+               required/>
+      </div>
+     <!-- <div class="clear" ng-if="vm.estabelecimento">
+        <input type="text" name="cep" ng-blur="vm.buscarCep(vm.usuario.cep)" placeholder="CEP *" my-enter="vm.buscarCep(vm.usuario.cep)"
+               ng-model="vm.usuario.cep" ui-br-cep-mask required>
+      </div>
+      <div class="clear" ng-if="vm.estabelecimento">
+        <input type="text" name="numero" placeholder="Número *" ng-model="vm.usuario.numero" required>
+      </div>-->
+      <div class="clear"  ng-if="vm.estabelecimento" >
+        <input type="text" name="cep" placeholder="Informe o endereço *" ng-model="vm.usuario.endereco.logradouro"
+             details="chosenPlaceDetails" googleplace required/>
+      </div>
+
+      <!--<p class="desc_cep" ng-show="!(vm.usuario.endereco | isEmpty)">
+        <strong>Logradouro:</strong> {{vm.usuario.endereco.logradouro}}
+        <br />
+      </p>-->
+      <div class="clear" ng-show="!!vm.mensagem">
+        <span class="alert_error">
+          <i class="fa fa-exclamation-triangle"></i>
+          {{vm.mensagem}}
+        </span>
+      </div>
+
+      <div class="clear" ng-show="formRegistro.$submitted">
+        <div ng-messages="formRegistro.$error">
+          <div ng-messages-include="error-list.html"></div>
+        </div>
+      </div>
+
+      <hr class="space">
+
+      <div class="clear">
+        <input class="btn_padrao" type="submit" value="Criar Conta" />
+      </div>
+     <!-- <div class="clear">
+        <p>Ao criar a conta, você concorda com nossos
+          <br />
+          <a href="#">Política de Privacidade</a> e <a href="#">Termos de Uso</a></p>
+      </div>-->
+
+      <script id="error-list.html" type="text/ng-template">
+        <div ng-message="required">
+                    <span class="alert_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    Informe os campos com asterisco (*)
+                    </span>
+        </div>
+        <div ng-message="minlength">
+                    <span class="alert_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    Informe senha com pelo menos 3 caracteres
+                    </span>
+        </div>
+        <div ng-message="maxlength">
+                    <span class="alert_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    Tamanho máximo no campo nome é de 50 caracteres
+                    </span>
+        </div>
+        <div ng-message when="email">
+                    <span class="alert_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    E-mail inválido
+                    </span>
+        </div>
+        <div ng-message when="cep">
+                    <span class="alert_error">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    CEP inválido
+                    </span>
+        </div>
+      </script>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-view view-title="ENFILEIRAMENTO" cache-view="false" hide-back-button="true" ng-controller="dashboard.estabelecimento as vm">
+  <ion-nav-buttons side="right">
+    <a class="" ng-href="#/app/notificacao/estabelecimento">
+            <span class="notify">
+                <i class="fa fa-bell"></i>
+				<span class="number">{{vm.notificacao.length}}</span>
+            </span>
+    </a>
+  </ion-nav-buttons>
+  <ion-content>
+    <p></p>
+    <div class="center">
+      <ul class="list_category">
+        <li>
+          <a href="#/app/fila/estabelecimento">
+            <i class="fa fa-users"></i>
+            <span>Usuário(s) em espera</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

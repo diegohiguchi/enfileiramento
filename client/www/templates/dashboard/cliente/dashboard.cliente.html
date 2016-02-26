@@ -1,0 +1,23 @@
+<ion-view view-title="ENFILEIRAMENTO" cache-view="false" hide-back-button="true" ng-controller="dashboard.cliente as vm">
+  <ion-nav-buttons side="right">
+    <a class="" ng-href="#/app/notificacao/cliente">
+            <span class="notify">
+                <i class="fa fa-bell"></i>
+				<span class="number">{{vm.notificacao.length}}</span>
+            </span>
+    </a>
+  </ion-nav-buttons>
+  <ion-content>
+    <p></p>
+    <div class="center">
+      <ul class="list_category">
+        <li>
+          <a ng-href="#/app/localizacao">
+            <i class="fa fa-search"></i>
+            <span>Buscar Estabelecimento(s)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

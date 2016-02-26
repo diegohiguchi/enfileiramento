@@ -1,0 +1,22 @@
+{
+  "name": "Enfileiramento",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "ngCordova": "^0.1.24-alpha",
+    "ionic-service-core": "^0.1.10",
+    "ionic-service-push": "^0.1.13",
+    "angular-websocket": "^1.0.14",
+    "angular-input-masks": "~2.1.1"
+  },
+  "resolutions": {
+    "angular": ">= 1.0.8"
+  },
+  "dependencies": {
+    "angular-input-masks": "^2.1.1",
+    "moment": "^2.11.2",
+    "angular-messages": "^1.5.0",
+    "angular-socket-io": "^0.7.0",
+    "underscore": "^1.8.3"
+  }
+}
